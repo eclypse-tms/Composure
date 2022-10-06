@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rounded</title>
+    <defs>
+        <rect id="path-1" x="6" y="6" width="48" height="48" rx="8"></rect>
+        <filter x="-14.6%" y="-10.4%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="-109.935714%" x2="50%" y2="97.6857143%" id="linearGradient-3">
+            <stop stop-color="#F44F5A" offset="0%"></stop>
+            <stop stop-color="#EE3D4A" offset="44.3%"></stop>
+            <stop stop-color="#E52030" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-197.514286%" x2="50%" y2="333.957143%" id="linearGradient-4">
+            <stop stop-color="#FFD869" offset="0%"></stop>
+            <stop stop-color="#FEC52B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-109.981818%" x2="50%" y2="154.609091%" id="linearGradient-5">
+            <stop stop-color="#427FDB" offset="0.2%"></stop>
+            <stop stop-color="#2668CB" offset="39.7%"></stop>
+            <stop stop-color="#1358BF" offset="76.3%"></stop>
+            <stop stop-color="#0C52BB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-171.345455%" x2="50%" y2="204.354545%" id="linearGradient-6">
+            <stop stop-color="#F9F9F9" offset="0%"></stop>
+            <stop stop-color="#F0F1F2" offset="26%"></stop>
+            <stop stop-color="#D9DCDF" offset="67.8%"></stop>
+            <stop stop-color="#C2C8CC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-197.466667%" x2="50%" y2="491.316667%" id="linearGradient-7">
+            <stop stop-color="#F9F9F9" offset="0%"></stop>
+            <stop stop-color="#F0F1F2" offset="26%"></stop>
+            <stop stop-color="#D9DCDF" offset="67.8%"></stop>
+            <stop stop-color="#C2C8CC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-54.9714286%" x2="50%" y2="535.414286%" id="linearGradient-8">
+            <stop stop-color="#F9F9F9" offset="0%"></stop>
+            <stop stop-color="#F0F1F2" offset="26%"></stop>
+            <stop stop-color="#D9DCDF" offset="67.8%"></stop>
+            <stop stop-color="#C2C8CC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-126.4%" x2="50%" y2="463.985714%" id="linearGradient-9">
+            <stop stop-color="#F9F9F9" offset="0%"></stop>
+            <stop stop-color="#F0F1F2" offset="26%"></stop>
+            <stop stop-color="#D9DCDF" offset="67.8%"></stop>
+            <stop stop-color="#C2C8CC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-384.775%" x2="50%" y2="341.9%" id="linearGradient-10">
+            <stop stop-color="#F44F5A" offset="0%"></stop>
+            <stop stop-color="#EE3D4A" offset="44.3%"></stop>
+            <stop stop-color="#E52030" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-206.353846%" x2="50%" y2="79.8230769%" id="linearGradient-11">
+            <stop stop-color="#FFD869" offset="0%"></stop>
+            <stop stop-color="#FEC52B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-127.45%" x2="50%" y2="600.175%" id="linearGradient-12">
+            <stop stop-color="#427FDB" offset="0.2%"></stop>
+            <stop stop-color="#2668CB" offset="39.7%"></stop>
+            <stop stop-color="#1358BF" offset="76.3%"></stop>
+            <stop stop-color="#0C52BB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Rounded" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <g id="composure" transform="translate(10.000000, 15.000000)" fill-rule="nonzero">
+            <path d="M38,30 L2,30 C0.895,30 0,29.105 0,28 L0,2 C0,0.895 0.895,0 2,0 L38,0 C39.105,0 40,0.895 40,2 L40,28 C40,29.105 39.105,30 38,30 Z" id="Path" fill="#000000"></path>
+            <polygon id="Path" fill="url(#linearGradient-3)" points="2 2 16 2 16 16 2 16"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-4)" points="17 2 25 2 25 9 17 9"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-5)" points="17 17 25 17 25 28 17 28"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-6)" points="2 17 16 17 16 28 2 28"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-7)" points="17 10 25 10 25 16 17 16"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-8)" points="26 2 33 2 33 9 26 9"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-9)" points="34 7 38 7 38 14 34 14"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-10)" points="34 2 38 2 38 6 34 6"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-11)" points="26 15 38 15 38 28 26 28"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-12)" points="26 10 33 10 33 14 26 14"></polygon>
+        </g>
+    </g>
+</svg>

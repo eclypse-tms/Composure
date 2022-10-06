@@ -1,2 +1,130 @@
-# Composure
-Build Forms with Compositional Layout
+<p align="center">
+  <img width="150" height="150" src="./readme_assets/composure_app_icon.svg">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-5.x-orange?logo=swift" alt="Swift 5.x">
+    <img src="https://img.shields.io/badge/iOS-13%2B-blue?logo=apple" alt="iOS 13+">
+    <img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="MIT License">
+</p>
+
+# Composure 
+
+Create complex layouts with UICollectionView using compositional layout. With Composure, you do not need to spend time writing boiler plate code or get into the nitty gritty details of Compositional Layouts. A lot of the complexity is handled for you by Composure.
+
+## Create layouts like this with ease:
+
+![Dynamic Width Fixed Height](./readme_assets/preview.png)
+
+
+## Installation (iOS, macCatalyst)
+
+### Swift PM
+Add Composure to your project via Swift Package Manager.
+
+```
+https://github.com/BenderNK/Composure
+```
+
+### Manual
+Simply add the files in the [Sources](./Sources/Composure) folder into your project.
+
+## Usage
+
+### Step 1
+
+Create an `enum` that defines each section in your CollectionView and make this enum conform to `Int`, `CaseIterable`, `DefinesCompositionalLayout` protocols as shown below:
+
+```
+import UIKit
+import Composure
+
+enum ComposureSection: Int, CaseIterable, DefinesCompositionalLayout {
+    case section1
+    case section2
+    
+    
+    func layoutInfo(using layoutEnvironment: NSCollectionLayoutEnvironment) -> CompositionalLayoutOption {
+        switch self {
+        // cells in this section take up the available width but their height is unknown
+        case .section1:
+            return .fullWidthDynamicHeight(estimatedHeight: 75)
+        // cells in this section have a fixed height but their width changes depending on its contents
+        case .section2:
+            return .dynamicWidthFixedHeight(estimatedWidth: 150, fixedHeight: 150)
+        }
+    }
+
+    /// Only needed if you have header or footer views for each section
+    func headerInfo(using layoutEnvironment: NSCollectionLayoutEnvironment) -> CompositionalLayoutOption? {
+        switch self {
+        case .section1:
+            return .fullWidthFixedHeight(fixedHeight: 30)
+        case .section2:
+            return .fullWidthFixedHeight(fixedHeight: 55)
+        }
+    }
+
+}
+```
+
+### Step 2
+In your View Controller while configuring your collection view, add this line to auto-generate the layout based on the enum definitions in Step 1:
+
+```
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ...
+        collectionView.collectionViewLayout = generateComposionalLayout(with: ComposureSection.allCases)
+        ...
+    }
+```
+
+### Result
+The cells in section 1 will be laid out taking up all available space width-wise while adjusting the height as needed. The cells in section 2 will be laid out with dynamic width while their height is fixed. 
+
+<p align="center">
+  <img width="431" height="311" src="./readme_assets/result.jpg" alt="Layout with multiple sections">
+</p>
+
+## All Layout Options
+This repository includes an [example project](./Example/Example.xcodeproj) where you can see all possible layouts this library supports. 
+
+<p align="center">
+  <img width="220" height="443" src="./readme_assets/all_layout_options.jpg">
+</p>
+
+
+
+## Design Choices
+1. Designed to work with vertical scrolling views since most of the forms are also laid out that way.
+1. Each section in your view contains a single type of layout. Even though it is possible to mix and match different type of layouts within the same section, this library is written to accept a single type of layout.
+1. Each collection layout group takes the entire available width.
+1. For header and footer views, UICollectionView.elementKindSectionHeader and UICollectionView.elementKindSectionFooter are supported only.
+
+## Assumptions
+1. The cells, header or footer views you use with this library have to be unambiguously constrained. Under-constrained or improperly constrained cells will not work.
+1. Consistent spacing around each cell within each section.
+
+
+## More Information
+* There are additional layout options which are detailed in [this medium blog](https://deniznessa.medium.com/create-forms-with-compositional-layout-in-uicollectionview-d89e6b6923c2). 
+* We encourage you to run the included example project and select an iPad device to see the nuances in various layouts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

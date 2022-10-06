@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ae9-v4-6F5" customClass="HeaderView" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw4-d0-5Tw">
+                    <rect key="frame" x="0.0" y="27" width="414" height="17"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="wxk-SC-FcH"/>
+            <constraints>
+                <constraint firstItem="nw4-d0-5Tw" firstAttribute="leading" secondItem="ae9-v4-6F5" secondAttribute="leading" id="Ch4-Q7-ZaU"/>
+                <constraint firstItem="wxk-SC-FcH" firstAttribute="bottom" secondItem="nw4-d0-5Tw" secondAttribute="bottom" constant="6" id="rFi-6n-n31"/>
+                <constraint firstAttribute="trailing" secondItem="nw4-d0-5Tw" secondAttribute="trailing" id="yUn-YK-0ch"/>
+            </constraints>
+            <connections>
+                <outlet property="headerTitle" destination="nw4-d0-5Tw" id="GdT-m6-UAM"/>
+            </connections>
+            <point key="canvasLocation" x="-26" y="127"/>
+        </collectionReusableView>
+    </objects>
+</document>

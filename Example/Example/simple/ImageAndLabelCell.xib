@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ImageAndLabelCell" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="232" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="232" height="149"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK0-08-INb" customClass="BorderedView" customModule="Example" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="232" height="149"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6B-I3-8Mz">
+                                <rect key="frame" x="8" y="8" width="216" height="133"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone.radiowaves.left.and.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sd9-t3-84Z">
+                                        <rect key="frame" x="0.0" y="49" width="36" height="35.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="E2e-z5-zIc"/>
+                                            <constraint firstAttribute="width" constant="36" id="kKz-Qn-oSQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore," textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmQ-jS-SQp">
+                                        <rect key="frame" x="44" y="0.0" width="172" height="133"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="300" id="Wke-BZ-vJ7">
+                                                <variation key="widthClass=compact" constant="210"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="sd9-t3-84Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W6B-I3-8Mz" secondAttribute="top" priority="750" id="8cS-4A-woZ"/>
+                                    <constraint firstItem="UmQ-jS-SQp" firstAttribute="top" secondItem="W6B-I3-8Mz" secondAttribute="top" id="8dX-PO-Zip"/>
+                                    <constraint firstAttribute="bottom" secondItem="UmQ-jS-SQp" secondAttribute="bottom" id="cv8-1w-Bx5"/>
+                                    <constraint firstItem="sd9-t3-84Z" firstAttribute="centerY" secondItem="W6B-I3-8Mz" secondAttribute="centerY" id="dOk-au-BKg"/>
+                                    <constraint firstItem="sd9-t3-84Z" firstAttribute="leading" secondItem="W6B-I3-8Mz" secondAttribute="leading" id="iai-im-0N0"/>
+                                    <constraint firstAttribute="trailing" secondItem="UmQ-jS-SQp" secondAttribute="trailing" id="wBz-Vm-RxJ"/>
+                                    <constraint firstItem="UmQ-jS-SQp" firstAttribute="leading" secondItem="sd9-t3-84Z" secondAttribute="trailing" constant="8" id="wyU-Ei-bWm"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sd9-t3-84Z" secondAttribute="bottom" priority="750" id="zSX-Sb-e9v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W6B-I3-8Mz" firstAttribute="leading" secondItem="BK0-08-INb" secondAttribute="leading" constant="8" id="3GR-nX-L0h"/>
+                            <constraint firstAttribute="trailing" secondItem="W6B-I3-8Mz" secondAttribute="trailing" constant="8" id="CXc-jA-Ymv"/>
+                            <constraint firstItem="W6B-I3-8Mz" firstAttribute="top" secondItem="BK0-08-INb" secondAttribute="top" constant="8" id="Mri-Wn-XNO"/>
+                            <constraint firstAttribute="bottom" secondItem="W6B-I3-8Mz" secondAttribute="bottom" constant="8" id="Nvd-DI-4Z5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="separatorColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="BK0-08-INb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="N7t-lg-JgV"/>
+                <constraint firstAttribute="trailing" secondItem="BK0-08-INb" secondAttribute="trailing" id="Q77-9g-xax"/>
+                <constraint firstAttribute="bottom" secondItem="BK0-08-INb" secondAttribute="bottom" id="YpU-A0-Ycs"/>
+                <constraint firstItem="BK0-08-INb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dwc-st-LDr"/>
+            </constraints>
+            <size key="customSize" width="232" height="149"/>
+            <connections>
+                <outlet property="cellImage" destination="sd9-t3-84Z" id="EfR-sU-SGJ"/>
+                <outlet property="cellLabel" destination="UmQ-jS-SQp" id="fNV-xy-TMi"/>
+            </connections>
+            <point key="canvasLocation" x="269.56521739130437" y="144.97767857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="iphone.radiowaves.left.and.right" catalog="system" width="128" height="85"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
