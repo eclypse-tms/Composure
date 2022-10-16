@@ -37,6 +37,10 @@ open class IntToLayoutConverter {
             layoutResult = .minWidthFixedHeight(minWidth: 0, fixedHeight: 0)
         case 11:
             layoutResult = .minWidthDynamicHeight(minWidth: 0, estimatedHeight: 0)
+        case 12:
+            layoutResult = .multipleCenteredFixedHeight(numberOfCells: 0, totalMaxWidthOfAllCells: 0, fixedHeight: 0)
+        case 13:
+            layoutResult = .multipleCenteredDynamicHeight(numberOfCells: 0, totalMaxWidthOfAllCells: 0, estimatedHeight: 0)
         default:
             layoutResult = .fullWidthFixedHeight(fixedHeight: 0)
         }
@@ -70,12 +74,16 @@ open class IntToLayoutConverter {
             return 10
         case .minWidthDynamicHeight(_, _):
             return 11
+        case .multipleCenteredFixedHeight(_, _, _):
+            return 12
+        case .multipleCenteredDynamicHeight(_, _, _):
+            return 13
         }
     }
     
     open var allCases: [CompositionalLayoutOption] {
         var result = [CompositionalLayoutOption]()
-        for index in 0..<12 {
+        for index in 0..<14 {
             let layoutOption = convert(intValue: index)
             result.append(layoutOption)
         }

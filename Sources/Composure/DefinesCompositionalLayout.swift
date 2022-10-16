@@ -1,5 +1,5 @@
 //
-//  ComposeForm
+//  Composure
 //  Copyright © 2022 Eclypse Software, LLC. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

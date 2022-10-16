@@ -36,7 +36,8 @@ enum SimpleViewSection: Int, CaseIterable, DefinesCompositionalLayout {
     case section9
     case section10
     case section11
-    
+    case section12
+    case section13
     
     func layoutInfo(using layoutEnvironment: NSCollectionLayoutEnvironment) -> CompositionalLayoutOption {
         switch self {
@@ -64,6 +65,11 @@ enum SimpleViewSection: Int, CaseIterable, DefinesCompositionalLayout {
             return .minWidthFixedHeight(minWidth: 210, fixedHeight: 150)
         case .section11:
             return .minWidthDynamicHeight(minWidth: 300, estimatedHeight: 210)
+        case .section12:
+            return .multipleCenteredFixedHeight(numberOfCells: 2, totalMaxWidthOfAllCells: 450, fixedHeight: 180)
+        case .section13:
+            return .multipleCenteredDynamicHeight(numberOfCells: 3, totalMaxWidthOfAllCells: 600, estimatedHeight: 240)
+            
         }
     }
     

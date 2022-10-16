@@ -1,5 +1,5 @@
 //
-//  ComposeForm
+//  Composure
 //  Copyright © 2022 Eclypse Software, LLC. All rights reserved.
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -140,44 +140,37 @@ extension UIViewController {
         }
     }
     
-    private func finalSectionInsets(availableContentWidth: CGFloat, sectionContentInsets: NSDirectionalEdgeInsets,
+    private func finalSectionInsets(availableContentWidth: CGFloat,
+                                    sectionContentInsets: NSDirectionalEdgeInsets,
                                     cellLayout: CompositionalLayoutOption) -> NSDirectionalEdgeInsets {
         
-
+        func calculateInsets(basedOn maxAllowedWidth: CGFloat) -> NSDirectionalEdgeInsets {
+            let usableWidthForCellLayout = availableContentWidth - (sectionContentInsets.leading + sectionContentInsets.trailing)
+            if usableWidthForCellLayout > maxAllowedWidth {
+                //content width is greater than the maximum allowed cell width
+                //in order to center it, we need to bump up the section content insets
+                let amountWeNeedToIncreaseSectionContentInsetsForEachSide = (usableWidthForCellLayout - maxAllowedWidth) / 2.0
+                return NSDirectionalEdgeInsets(top: sectionContentInsets.top,
+                                               leading: sectionContentInsets.leading + amountWeNeedToIncreaseSectionContentInsetsForEachSide,
+                                               bottom: sectionContentInsets.bottom,
+                                               trailing: sectionContentInsets.trailing + amountWeNeedToIncreaseSectionContentInsetsForEachSide)
+            } else {
+                return sectionContentInsets
+            }
+        }
         
         switch cellLayout {
         case .centeredFixedHeight(let maxWidth, _):
-            let viewContentInset: UIEdgeInsets = view.safeAreaInsets
-            let usableWidthForCellLayout = availableContentWidth - (viewContentInset.left + viewContentInset.right) - (sectionContentInsets.leading + sectionContentInsets.trailing)
-            if usableWidthForCellLayout > maxWidth {
-                //content width is greater than the maximum allowed cell width
-                //in order to center it, we need to bump up the section content insets
-                let amountWeNeedToIncreaseSectionContentInsetsForEachSide = (usableWidthForCellLayout - maxWidth) / 2.0
-                return NSDirectionalEdgeInsets(top: sectionContentInsets.top,
-                                               leading: sectionContentInsets.leading + amountWeNeedToIncreaseSectionContentInsetsForEachSide,
-                                               bottom: sectionContentInsets.bottom,
-                                               trailing: sectionContentInsets.trailing + amountWeNeedToIncreaseSectionContentInsetsForEachSide)
-            } else {
-                return sectionContentInsets
-            }
+            return calculateInsets(basedOn: maxWidth)
         case .centeredDynamicHeight(let maxWidth, _):
-            let viewContentInset: UIEdgeInsets = view.safeAreaInsets
-            let usableWidthForCellLayout = availableContentWidth - (viewContentInset.left + viewContentInset.right) - (sectionContentInsets.leading + sectionContentInsets.trailing)
-            if usableWidthForCellLayout > maxWidth {
-                //content width is greater than the maximum allowed cell width
-                //in order to center it, we need to bump up the section content insets
-                let amountWeNeedToIncreaseSectionContentInsetsForEachSide = (usableWidthForCellLayout - maxWidth) / 2.0
-                return NSDirectionalEdgeInsets(top: sectionContentInsets.top,
-                                               leading: sectionContentInsets.leading + amountWeNeedToIncreaseSectionContentInsetsForEachSide,
-                                               bottom: sectionContentInsets.bottom,
-                                               trailing: sectionContentInsets.trailing + amountWeNeedToIncreaseSectionContentInsetsForEachSide)
-            } else {
-                return sectionContentInsets
-            }
+            return calculateInsets(basedOn: maxWidth)
+        case .multipleCenteredFixedHeight(_, let totalMaxWidthOfAllCells, _):
+            return calculateInsets(basedOn: totalMaxWidthOfAllCells)
+        case .multipleCenteredDynamicHeight(_, let totalMaxWidthOfAllCells, _):
+            return calculateInsets(basedOn: totalMaxWidthOfAllCells)
         default:
             return sectionContentInsets
         }
-        
     }
     
     /// determines the layout size of each cell heuristically if there is minimum width requirements
@@ -187,20 +180,18 @@ extension UIViewController {
                                          usesDynamicHeight: Bool,
                                          layoutEnvironment: NSCollectionLayoutEnvironment,
                                          compositionalSection: DefinesCompositionalLayout) -> NSCollectionLayoutSize {
-        //get the content insets of the view, if any
-        let viewContentInset: UIEdgeInsets = view.safeAreaInsets
         
         //this logic is using heuristics. In reality, interitem spacing is only needed n-1 times.
         //in other words, if you place n cells in a row, then you only need interitem spacing for n-1 times.
         //however, that makes the calculations complicated because you will have to perform at least 2 passes to figure out the exact
         //placement of each cell.
         
-        //we simply calcualte the available space that can be used for cell placement and determine how many cells can fit
-        let cellWidthInteritemSpacingIncluded = Int(minimumAllowedCellWidth + compositionalSection.interItemSpacing)
+        //we simply calculate the available space that can be used for cell placement and determine how many cells can fit
+        let cellWidthInterItemSpacingIncluded = Int(minimumAllowedCellWidth + compositionalSection.interItemSpacing)
         let sectionContentInset = compositionalSection.sectionInsets(layoutEnvironment: layoutEnvironment)
-        let usableWidthForCellLayout = availableContentWidth - (viewContentInset.left + viewContentInset.right) - (sectionContentInset.leading + sectionContentInset.trailing)
+        let usableWidthForCellLayout = availableContentWidth - (sectionContentInset.leading + sectionContentInset.trailing)
         
-        let numberOfCellsThatWouldFitTheScreen = CGFloat(Int(usableWidthForCellLayout) / cellWidthInteritemSpacingIncluded)
+        let numberOfCellsThatWouldFitTheScreen = CGFloat(Int(usableWidthForCellLayout) / cellWidthInterItemSpacingIncluded)
         
         if Int(numberOfCellsThatWouldFitTheScreen) <= 1 {
             //if we end up with zero cells, then make the cell take the entire space

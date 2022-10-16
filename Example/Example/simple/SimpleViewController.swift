@@ -91,6 +91,10 @@ class SimpleViewController: UIViewController {
             snapshot.appendItems(generateContent(contentLength: .long), toSection: .section10)
         case .minWidthDynamicHeight(minWidth: _, estimatedHeight: _):
             snapshot.appendItems(generateContent(contentLength: .long), toSection: .section11)
+        case .multipleCenteredFixedHeight(numberOfCells: _, totalMaxWidthOfAllCells: _, fixedHeight: _):
+            snapshot.appendItems(generateContent(contentLength: .extraExtraLong), toSection: .section12)
+        case .multipleCenteredDynamicHeight(numberOfCells: _, totalMaxWidthOfAllCells: _, estimatedHeight: _):
+            snapshot.appendItems(generateContent(contentLength: .extraExtraLong), toSection: .section13)
         }
         
         dataSource?.apply(snapshot, animatingDifferences: true, completion: nil)

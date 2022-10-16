@@ -1,5 +1,5 @@
 //
-//  ComposeForm
+//  Composure
 //  Copyright © 2022 Eclypse Software, LLC. All rights reserved.
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,6 +56,14 @@ public enum CompositionalLayoutOption {
     /// centers the cell if the available view content size is bigger than the max allowed width.
     /// otherwise takes up the entire width.
     case centeredDynamicHeight(maxWidth: CGFloat, estimatedHeight: CGFloat)
+    
+    /// centers the cell if the available view content size is bigger than the max allowed width.
+    /// otherwise takes up the entire width.
+    case multipleCenteredFixedHeight(numberOfCells: Int, totalMaxWidthOfAllCells: CGFloat, fixedHeight: CGFloat)
+    
+    /// fits as many cells as possible centers the cell if the available view content size is bigger than the max allowed width.
+    /// otherwise takes up the entire width.
+    case multipleCenteredDynamicHeight(numberOfCells: Int, totalMaxWidthOfAllCells: CGFloat, estimatedHeight: CGFloat)
 
     ///you use flexible width cells depending on the available screen size.
     ///compositional layout will try to fit as many cells as possible in the same row
@@ -91,6 +99,10 @@ public enum CompositionalLayoutOption {
             return 10
         case .minWidthDynamicHeight(_, _):
             return 11
+        case .multipleCenteredFixedHeight(_, _, _):
+            return 12
+        case .multipleCenteredDynamicHeight(_, _, _):
+            return 13
         }
     }
     
@@ -120,6 +132,10 @@ public enum CompositionalLayoutOption {
             return "Min Width Fixed Height"
         case .minWidthDynamicHeight(_, _):
             return "Min Width Dynamic Height"
+        case .multipleCenteredFixedHeight(_, _, _):
+            return "Centered Multiple Fixed Height"
+        case .multipleCenteredDynamicHeight(_, _, _):
+            return "Centered Multiple Dynamic Height"
         }
     }
 }

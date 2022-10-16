@@ -1,5 +1,5 @@
 //
-//  ComposeForm
+//  Composure
 //  Copyright © 2022 Eclypse Software, LLC. All rights reserved.
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -79,6 +79,16 @@ extension NSCollectionLayoutSize {
             self.init(
                 widthDimension: .fractionalWidth(1),
                 heightDimension: .absolute(1)
+            )
+        case .multipleCenteredFixedHeight(let numberOfCells, _, let fixedHeight):
+            self.init(
+                widthDimension: .fractionalWidth(CGFloat(1.0) / CGFloat(numberOfCells)),
+                heightDimension: .absolute(fixedHeight)
+            )
+        case .multipleCenteredDynamicHeight(let numberOfCells, _, let estimatedHeight):
+            self.init(
+                widthDimension: .fractionalWidth(CGFloat(1.0) / CGFloat(numberOfCells)),
+                heightDimension: .estimated(estimatedHeight)
             )
         }
     }
