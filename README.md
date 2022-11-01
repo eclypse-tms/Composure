@@ -12,9 +12,11 @@
 
 Create complex layouts with UICollectionView using compositional layout. With Composure, you do not need to spend time writing boiler plate code or get into the nitty gritty details of Compositional Layouts. A lot of the complexity is handled for you by Composure.
 
-## Create layouts like this with ease:
+## Create layouts like these with ease:
 
-![Dynamic Width Fixed Height](./readme_assets/preview.png)
+![Portrait Previews](./readme_assets/preview-portrait.jpg)
+
+![Landscape Previews](./readme_assets/preview-landscape.jpg)
 
 
 ## Installation (iOS, macCatalyst)
@@ -43,19 +45,19 @@ enum ComposureSection: Int, CaseIterable, DefinesCompositionalLayout {
     case section1
     case section2
     
-    
+    /// REQUIRED:  
     func layoutInfo(using layoutEnvironment: NSCollectionLayoutEnvironment) -> CompositionalLayoutOption {
         switch self {
         // cells in this section take up the available width but their height is unknown
         case .section1:
             return .fullWidthDynamicHeight(estimatedHeight: 75)
-        // cells in this section have a fixed height but their width changes depending on its contents
+        // cells in this section have a fixed height but their width changes depending on the contents
         case .section2:
             return .dynamicWidthFixedHeight(estimatedWidth: 150, fixedHeight: 150)
         }
     }
 
-    /// Only needed if you have header or footer views for each section
+    /// OPTIONAL: Only needed if you have header or footer views for each section
     func headerInfo(using layoutEnvironment: NSCollectionLayoutEnvironment) -> CompositionalLayoutOption? {
         switch self {
         case .section1:
@@ -98,9 +100,9 @@ This repository includes an [example project](./Example/Example.xcodeproj) where
 
 ## Design Choices
 1. Designed to work with vertical scrolling views since most of the forms are also laid out that way.
-1. Each section in your view contains a single type of layout. Even though it is possible to mix and match different type of layouts within the same section, this library is written to accept a single type of layout.
-1. Each collection layout group takes the entire available width.
-1. For header and footer views, UICollectionView.elementKindSectionHeader and UICollectionView.elementKindSectionFooter are supported only.
+1. Each section in your view contains a single type of layout. Even though it is possible to mix and match different type of layouts within the same section in Compositional Layouts, this library is designed to accept a single type of layout per section.
+1. Each collection layout group takes the entire available width. If you are not familiar with "Layout Groups", a diagram of a layout group can be found on [apple's site](https://developer.apple.com/documentation/uikit/uicollectionviewcompositionallayout).
+1. For header and footer views, UICollectionView.elementKindSectionHeader and UICollectionView.elementKindSectionFooter types are supported.
 
 ## Assumptions
 1. The cells, header or footer views you use with this library have to be unambiguously constrained. Under-constrained or improperly constrained cells will not work.
