@@ -25,7 +25,7 @@ Create complex layouts with UICollectionView using compositional layout. With Co
 Add Composure to your project via Swift Package Manager.
 
 ```
-https://github.com/BenderNK/Composure
+https://github.com/eclypse-tms/Composure
 ```
 
 ### Manual
