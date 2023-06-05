@@ -17,7 +17,6 @@
 		B14473D928EC807E00B051C1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14473CD28EC807E00B051C1 /* MainViewController.xib */; };
 		B14473DA28EC807E00B051C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14473CE28EC807E00B051C1 /* MainViewController.swift */; };
 		B14473DD28EC811C00B051C1 /* LoremIpsum in Frameworks */ = {isa = PBXBuildFile; productRef = B14473DC28EC811C00B051C1 /* LoremIpsum */; };
-		B14473E228EC815B00B051C1 /* Composure in Frameworks */ = {isa = PBXBuildFile; productRef = B14473E128EC815B00B051C1 /* Composure */; };
 		B14473E628ECC16300B051C1 /* CompositeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14473E428ECC16300B051C1 /* CompositeViewController.swift */; };
 		B14473E728ECC16300B051C1 /* CompositeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14473E528ECC16300B051C1 /* CompositeViewController.xib */; };
 		B14473EA28ECC22200B051C1 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14473E928ECC22200B051C1 /* SimpleViewController.swift */; };
@@ -34,6 +33,7 @@
 		B14E765328EE06D900D7D784 /* RandomImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E765228EE06D900D7D784 /* RandomImageGenerator.swift */; };
 		B14E765528EE075A00D7D784 /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E765428EE075A00D7D784 /* RandomImage.swift */; };
 		B14E765E28EF5B7A00D7D784 /* IntToLayoutConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E765D28EF5B7A00D7D784 /* IntToLayoutConverter.swift */; };
+		B1F4854A2A2A96CA009E458A /* Composure in Frameworks */ = {isa = PBXBuildFile; productRef = B1F485492A2A96CA009E458A /* Composure */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B14473E228EC815B00B051C1 /* Composure in Frameworks */,
+				B1F4854A2A2A96CA009E458A /* Composure in Frameworks */,
 				B14473DD28EC811C00B051C1 /* LoremIpsum in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +196,7 @@
 			name = Example;
 			packageProductDependencies = (
 				B14473DC28EC811C00B051C1 /* LoremIpsum */,
-				B14473E128EC815B00B051C1 /* Composure */,
+				B1F485492A2A96CA009E458A /* Composure */,
 			);
 			productName = Example;
 			productReference = B14473A928EC801200B051C1 /* Example.app */;
@@ -505,7 +505,7 @@
 			package = B14473DB28EC811C00B051C1 /* XCRemoteSwiftPackageReference "LoremIpsum" */;
 			productName = LoremIpsum;
 		};
-		B14473E128EC815B00B051C1 /* Composure */ = {
+		B1F485492A2A96CA009E458A /* Composure */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Composure;
 		};

@@ -40,7 +40,7 @@ class SimpleViewController: UIViewController {
         mainCollectionView.register(ImageAndLabelCell.nib, forCellWithReuseIdentifier: ImageAndLabelCell.nibName)
         mainCollectionView.dataSource = configureDataSource()
         
-        mainCollectionView.collectionViewLayout = generateComposionalLayout(with: SimpleViewSection.allCases)
+        mainCollectionView.collectionViewLayout = generateCompositionalLayout(with: SimpleViewSection.allCases)
         
         mainCollectionView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 150, right: 0)
                 

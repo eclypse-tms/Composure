@@ -41,7 +41,7 @@ class CompositeViewController: UIViewController {
         mainCollectionView.register(HeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.nibName)
         
         mainCollectionView.dataSource = configureDataSource()
-        mainCollectionView.collectionViewLayout = generateComposionalLayout(with: CompositeViewSection.allCases)
+        mainCollectionView.collectionViewLayout = generateCompositionalLayout(with: CompositeViewSection.allCases)
         
         mainCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 150, right: 0)
                 

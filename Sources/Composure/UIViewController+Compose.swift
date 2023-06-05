@@ -23,7 +23,7 @@
 import UIKit
 
 extension UIViewController {
-    open func generateComposionalLayout(with layoutSections: [DefinesCompositionalLayout]) -> UICollectionViewCompositionalLayout {
+    public func generateCompositionalLayout(with layoutSections: [DefinesCompositionalLayout]) -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
             guard let strongSelf = self else { return nil }
             let eachSection: DefinesCompositionalLayout = layoutSections[section]
@@ -105,6 +105,11 @@ extension UIViewController {
             
             return sectionLayout
         }
+    }
+    
+    @available(*, deprecated, renamed: "generateCompositionalLayout(with:)")
+    public func generateComposionalLayout(with layoutSections: [DefinesCompositionalLayout]) -> UICollectionViewCompositionalLayout {
+        return generateCompositionalLayout(with: layoutSections)
     }
     
     private func addHeaderIfNecessary(eachSection: DefinesCompositionalLayout,

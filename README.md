@@ -77,7 +77,7 @@ In your View Controller while configuring your collection view, add this line to
     override func viewDidLoad() {
         super.viewDidLoad()
         ...
-        collectionView.collectionViewLayout = generateComposionalLayout(with: ComposureSection.allCases)
+        collectionView.collectionViewLayout = generateCompositionalLayout(with: ComposureSection.allCases)
         ...
     }
 ```
@@ -110,8 +110,8 @@ This repository includes an [example project](./Example/Example.xcodeproj) where
 
 
 ## More Information
-* There are additional layout options which are detailed in [this medium blog](https://deniznessa.medium.com/create-forms-with-compositional-layout-in-uicollectionview-d89e6b6923c2). 
-* We encourage you to run the included example project and select an iPad device to see the nuances in various layouts.
+* There are additional layout options which are detailed in [this medium blog](https://blog.eclypse.io/create-forms-with-compositional-layout-in-uicollectionview-d89e6b6923c2). 
+* We encourage you to run the included example project and select an iPad or iOS device to see the nuances in various layouts.
 
 
 
