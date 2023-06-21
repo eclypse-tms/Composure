@@ -124,6 +124,8 @@ extension UIViewController {
                             elementKind: UICollectionView.elementKindSectionHeader,
                             alignment: .top)
             
+            headerItem.pinToVisibleBounds = true
+            
             sectionLayout.boundarySupplementaryItems.append(headerItem)
         }
     }
@@ -140,6 +142,8 @@ extension UIViewController {
                             layoutSize: footerLayoutSize,
                             elementKind: UICollectionView.elementKindSectionFooter,
                             alignment: .bottom)
+            
+            footerItem.pinToVisibleBounds = true
             
             sectionLayout.boundarySupplementaryItems.append(footerItem)
         }
