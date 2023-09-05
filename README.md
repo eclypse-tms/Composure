@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" height="150" src="./readme_assets/composure_app_icon.svg">
+  <img width="150" height="150" src="./assets/composure_app_icon.svg">
 </p>
 
 <p align="center">
@@ -14,9 +14,9 @@ Create complex layouts with UICollectionView using compositional layout. With Co
 
 ## Create layouts like these with ease:
 
-![Portrait Previews](./readme_assets/preview-portrait.jpg)
+![Portrait Previews](./assets/preview-portrait.jpg)
 
-![Landscape Previews](./readme_assets/preview-landscape.jpg)
+![Landscape Previews](./assets/preview-landscape.jpg)
 
 
 ## Installation (iOS, macCatalyst)
@@ -41,7 +41,9 @@ Create an `enum` that defines each section in your CollectionView and make this 
 import UIKit
 import Composure
 
-enum ComposureSection: Int, CaseIterable, DefinesCompositionalLayout {
+// The enum must be an Int type. Each case in this enum also defines 
+// the presentation order of those sections in your collection view.   
+enum MyCustomLayout: Int, CaseIterable, DefinesCompositionalLayout {
     case section1
     case section2
     
@@ -77,7 +79,7 @@ In your View Controller while configuring your collection view, add this line to
     override func viewDidLoad() {
         super.viewDidLoad()
         ...
-        collectionView.collectionViewLayout = generateCompositionalLayout(with: ComposureSection.allCases)
+        collectionView.collectionViewLayout = generateCompositionalLayout(with: MyCustomLayout.allCases)
         ...
     }
 ```
@@ -86,14 +88,14 @@ In your View Controller while configuring your collection view, add this line to
 The cells in section 1 will be laid out taking up all available space width-wise while adjusting the height as needed. The cells in section 2 will be laid out with dynamic width while their height is fixed. 
 
 <p align="center">
-  <img width="431" height="311" src="./readme_assets/result.jpg" alt="Layout with multiple sections">
+  <img width="431" height="311" src="./assets/result.jpg" alt="Layout with multiple sections">
 </p>
 
 ## All Layout Options
 This repository includes an [example project](./Example/Example.xcodeproj) where you can see all possible layouts this library supports. 
 
 <p align="center">
-  <img width="220" height="443" src="./readme_assets/all_layout_options.jpg">
+  <img width="600" height="436" src="./assets/results_movie.gif">
 </p>
 
 

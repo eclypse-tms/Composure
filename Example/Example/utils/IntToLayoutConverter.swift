@@ -34,13 +34,13 @@ open class IntToLayoutConverter {
         case 9:
             layoutResult = .centeredDynamicHeight(maxWidth: 0, estimatedHeight: 0)
         case 10:
-            layoutResult = .minWidthFixedHeight(minWidth: 0, fixedHeight: 0)
-        case 11:
-            layoutResult = .minWidthDynamicHeight(minWidth: 0, estimatedHeight: 0)
-        case 12:
             layoutResult = .multipleCenteredFixedHeight(numberOfCells: 0, totalMaxWidthOfAllCells: 0, fixedHeight: 0)
-        case 13:
+        case 11:
             layoutResult = .multipleCenteredDynamicHeight(numberOfCells: 0, totalMaxWidthOfAllCells: 0, estimatedHeight: 0)
+        case 12:
+            layoutResult = .minWidthFixedHeight(minWidth: 0, fixedHeight: 0)
+        case 13:
+            layoutResult = .minWidthDynamicHeight(minWidth: 0, estimatedHeight: 0)
         default:
             layoutResult = .fullWidthFixedHeight(fixedHeight: 0)
         }
@@ -70,13 +70,13 @@ open class IntToLayoutConverter {
             return 8
         case .centeredDynamicHeight(_, _):
             return 9
-        case .minWidthFixedHeight(_, _):
-            return 10
-        case .minWidthDynamicHeight(_, _):
-            return 11
         case .multipleCenteredFixedHeight(_, _, _):
-            return 12
+            return 10
         case .multipleCenteredDynamicHeight(_, _, _):
+            return 11
+        case .minWidthFixedHeight(_, _):
+            return 12
+        case .minWidthDynamicHeight(_, _):
             return 13
         }
     }

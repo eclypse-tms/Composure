@@ -95,13 +95,13 @@ public enum CompositionalLayoutOption {
             return 8
         case .centeredDynamicHeight(_, _):
             return 9
-        case .minWidthFixedHeight(_, _):
-            return 10
-        case .minWidthDynamicHeight(_, _):
-            return 11
         case .multipleCenteredFixedHeight(_, _, _):
-            return 12
+            return 10
         case .multipleCenteredDynamicHeight(_, _, _):
+            return 11
+        case .minWidthFixedHeight(_, _):
+            return 12
+        case .minWidthDynamicHeight(_, _):
             return 13
         }
     }

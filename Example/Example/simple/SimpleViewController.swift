@@ -101,7 +101,7 @@ class SimpleViewController: UIViewController {
     }
     
     private func randomNumber(contentLength: ContentLength) -> UInt {
-        let distribution: UInt32
+        var distribution: UInt32 = 2
         switch contentLength {
         case .short:
             distribution = 2
@@ -114,6 +114,12 @@ class SimpleViewController: UIViewController {
         case .extraExtraLong:
             distribution = 48
         }
+        
+        if traitCollection.horizontalSizeClass == .regular {
+            distribution = distribution * 3
+        }
+        
+        
         let randomNumber = arc4random_uniform(distribution) + UInt32(1)
         return UInt(randomNumber)
     }
@@ -121,7 +127,15 @@ class SimpleViewController: UIViewController {
     private func generateContent(contentLength: ContentLength) -> [ImageAndLabelViewModel] {
         var content = [ImageAndLabelViewModel]()
         
-        for _ in 0..<24 {
+        let numberOfCells: Int
+        switch traitCollection.horizontalSizeClass {
+        case .regular:
+            numberOfCells = 72
+        default:
+            numberOfCells = 24
+        }
+        
+        for _ in 0..<numberOfCells {
             let title = LoremIpsum.words(withNumber: randomNumber(contentLength: contentLength))
             let vm = ImageAndLabelViewModel(title: title,
                                          image: randomImageGenerator.generate(for: CGSize(width: 36, height: 36)))
