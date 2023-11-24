@@ -28,6 +28,13 @@ Add Composure to your project via Swift Package Manager.
 https://github.com/eclypse-tms/Composure
 ```
 
+### Cocoapods
+Add Composure to your project via Cocoapods.
+
+```
+pod 'Composure', '~> 1.2.2'
+```
+
 ### Manual
 Simply add the files in the [Sources](./Sources/Composure) folder into your project.
 
