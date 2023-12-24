@@ -180,10 +180,10 @@
 		B290CBC82B38D5AE001C23EF /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				B290CBC92B38D5AE001C23EF /* IntToLayoutConverter.swift */,
 				B290CBCA2B38D5AE001C23EF /* BorderedView.swift */,
-				B290CBCB2B38D5AE001C23EF /* RandomImage.swift */,
+				B290CBC92B38D5AE001C23EF /* IntToLayoutConverter.swift */,
 				B290CBCC2B38D5AE001C23EF /* NibLoadable.swift */,
+				B290CBCB2B38D5AE001C23EF /* RandomImage.swift */,
 				B290CBCD2B38D5AE001C23EF /* RandomImageGenerator.swift */,
 			);
 			path = utils;
@@ -192,14 +192,14 @@
 		B290CBD32B38D5B7001C23EF /* composite */ = {
 			isa = PBXGroup;
 			children = (
-				B290CBD42B38D5B7001C23EF /* ImageLabelSliderCell.swift */,
-				B290CBD52B38D5B7001C23EF /* ImageLabelSliderViewModel.swift */,
-				B290CBD62B38D5B7001C23EF /* HeaderView.xib */,
+				B290CBD92B38D5B7001C23EF /* CompositeViewController.swift */,
+				B290CBDB2B38D5B7001C23EF /* CompositeViewController.xib */,
 				B290CBD72B38D5B7001C23EF /* CompositeViewSection.swift */,
 				B290CBD82B38D5B7001C23EF /* HeaderView.swift */,
-				B290CBD92B38D5B7001C23EF /* CompositeViewController.swift */,
+				B290CBD62B38D5B7001C23EF /* HeaderView.xib */,
+				B290CBD42B38D5B7001C23EF /* ImageLabelSliderCell.swift */,
 				B290CBDA2B38D5B7001C23EF /* ImageLabelSliderCell.xib */,
-				B290CBDB2B38D5B7001C23EF /* CompositeViewController.xib */,
+				B290CBD52B38D5B7001C23EF /* ImageLabelSliderViewModel.swift */,
 			);
 			path = composite;
 			sourceTree = "<group>";
@@ -216,11 +216,11 @@
 		B290CBEF2B38D972001C23EF /* simple */ = {
 			isa = PBXGroup;
 			children = (
-				B290CBF02B38D972001C23EF /* SimpleViewController.xib */,
-				B290CBF12B38D972001C23EF /* SimpleViewController.swift */,
 				B290CBF22B38D972001C23EF /* ImageAndLabelCell.swift */,
-				B290CBF32B38D972001C23EF /* ImageAndLabelViewModel.swift */,
 				B290CBF42B38D972001C23EF /* ImageAndLabelCell.xib */,
+				B290CBF32B38D972001C23EF /* ImageAndLabelViewModel.swift */,
+				B290CBF12B38D972001C23EF /* SimpleViewController.swift */,
+				B290CBF02B38D972001C23EF /* SimpleViewController.xib */,
 				B290CBF52B38D972001C23EF /* SimpleViewSection.swift */,
 			);
 			path = simple;
