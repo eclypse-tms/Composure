@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "composure",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/eclypse-tms/Composure",
+      "state" : {
+        "revision" : "5085526b12744c9dd042c66de26b175ca45b963e",
+        "version" : "1.2.2"
+      }
+    },
+    {
+      "identity" : "loremipsum",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lukaskubanek/LoremIpsum",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3c739014fd11bcf0a3b2263b95b89d12f1257579"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -48,7 +48,7 @@ enum CompositeViewSection: Int, CaseIterable, DefinesCompositionalLayout {
     func headerInfo(using layoutEnvironment: NSCollectionLayoutEnvironment) -> CompositionalLayoutOption? {
         switch self {
         case .section1:
-            return .fullWidthFixedHeight(fixedHeight: 30)
+            return .fullWidthFixedHeight(fixedHeight: 55)
         case .section2:
             return .fullWidthFixedHeight(fixedHeight: 55)
         }
